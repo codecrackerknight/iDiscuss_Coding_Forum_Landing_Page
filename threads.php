@@ -11,26 +11,25 @@
 <body>
     <?php require "partials/_header.php"; ?>
     <?php require "partials/_dbconnect.php"; ?>
-
-
-
-
+    <?php
+    $id = $_GET['catid'];
+    $sql = "SELECT * FROM `categories` WHERE `category_id` = $id";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $catName = $row['category_name'];
+        $catDesc = $row['category_description'];
+    }
+    ?>
 
     <!-- Category Container starts here  -->
     <div class="container my-4">
-        <div class="card">
+
+        <div class="card my-2">
             <div class="card-body">
-                <h5 class="card-title">Welcome to Python forum</h5>
-                <p class="card-text">This is react community forum for sharing knowledge and ideas.
-                    Don't spam in forum and maintain.
-                </p>
+                <h5 class="card-title">Welcome to <?php echo $catName; ?> forum</h5>
+                <p class="card-text"><?php echo $catDesc; ?></p>
                 <hr>
-                <p>
-                    Keep it friendly.<br>
-                    Be courteous and respectful. Appreciate that others may have an opinion different from yours.<br>
-                    Share your knowledge.<br>
-                    Refrain from demeaning, discriminatory, or harassing behaviour and speech.
-                </p>
+                <p>Keep it friendly.<br>Be courteous and respectful. Appreciate that others may have an opinion different from yours.<br>Share your knowledge.<br>Refrain from demeaning, discriminatory, or harassing behaviour and speech.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
