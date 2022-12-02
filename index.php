@@ -10,51 +10,65 @@
 
 <body>
   <?php require 'partials/_header.php'; ?>
+  <?php require 'partials/_dbconnect.php'; ?>
+  <?php $bgArr = array("partials/python.jpg","partials/js.jpg","partials/php.jpg","partials/perl.jpg");?>
 
   <!-- Slider Starts here -->
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="partials/cd4.jpg" width="1375" height="450" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="partials/cd5.jpg" width="1375" height="450" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="partials/cd3.jpg" width="1375" height="450" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="partials/cd4.jpg" width="1375" height="450" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="partials/cd5.jpg" width="1375" height="450" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="partials/cd3.jpg" width="1375" height="450" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
   <div class="container my-3">
     <h2 class="text-center">iDiscuss- Categories</h2>
     <div class="row ">
-
-      <div class="col-md-4">
-        <div class="card my-2" style="width: 18rem;">
-          <img src="partials/python.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Python</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-              the card's content.</p>
-            <a href="#" class="btn btn-primary">View threads</a>
-          </div>
+    <!-- Fetching the Categories -->
+    <?php
+    $sql = "SELECT * FROM `categories`";
+    $result = mysqli_query($conn, $sql);
+    $i=0;
+    while($row = mysqli_fetch_assoc($result)){
+      $catName = $row['category_name'];
+      $catDesc = $row['category_description'];
+      echo '<div class="col-md-4">
+      <div class="card my-2" style="width: 18rem;">
+        <img src='.$bgArr[$i].' class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">'.$catName.'</h5>
+          <p class="card-text">'.$catDesc.'</p>
+          <a href="#" class="btn btn-primary">View threads</a>
         </div>
       </div>
+    </div>';
+    $i=$i+1;
+    }
+    
+    
+    ?>
+      
     </div>
   </div>
 
