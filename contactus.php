@@ -7,14 +7,31 @@
     <title>Welcome to iDiscuss- Coding Forum</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <style>
+            #aboutpage{
+                min-height: 529px;
+                
+            }
+            .mytext{
+                color: black;
+            }
+        </style>
 </head>
 
 <body>
     <?php  require "partials/_header.php";?>
-
-
-
     <?php  require "partials/_dbconnect.php";?>
+
+    <div class="container my-4" id="aboutpage">
+        <div class="alert alert-primary" role="alert">
+            <h4 class="alert-heading">My Contact Details are below</h4>
+            <p class="mytext">My email address - mohdshoeb167@gmail.com</br>
+                Mobile no. - 9453598400
+            </p>
+            <hr>
+            <p class="mb-0">Thankyou So much for visiting this page.</p>
+        </div>
+    </div>
 
     <?php  require "partials/_footer.php";?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

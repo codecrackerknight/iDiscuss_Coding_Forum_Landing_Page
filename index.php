@@ -9,6 +9,8 @@
 </head>
 
 <body>
+
+  <!-- All Required PHP -->
   <?php require 'partials/_header.php'; ?>
   <?php require 'partials/_dbconnect.php'; ?>
   <?php $bgArr = array("partials/python.jpg", "partials/js.jpg", "partials/php.jpg", "partials/perl.jpg", "partials/csharp.jpg", "partials/java.jpg"); ?>
@@ -41,11 +43,13 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
   <!-- Categories name and fetching -->
   <div class="container my-3">
     <h2 class="text-center">iDiscuss- Browse Categories</h2>
     <div class="row ">
-      <!-- Fetching the Categories -->
+      
+      <!-- Fetching the Categories Using PHP while loop -->
       <?php
       $sql = "SELECT * FROM `categories`";
       $result = mysqli_query($conn, $sql);
@@ -72,6 +76,7 @@
   </div>
 
   <?php require 'partials/_footer.php'; ?>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
 </body>
