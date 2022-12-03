@@ -14,17 +14,6 @@ echo '<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <li class="nav-item">
         <a class="nav-link" href="about.php">About</a>
         </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categories
-        </a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-        </li>
         <li class="nav-item">
         <a class="nav-link" href="contactus.php">Contact Us</a>
         </li>
@@ -46,3 +35,17 @@ include 'partials/_loginModal.php';
 include 'partials/_signupModal.php';
     
 ?>
+
+<!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Categories
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+</li> -->

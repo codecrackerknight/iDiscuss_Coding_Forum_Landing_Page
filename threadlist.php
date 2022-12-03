@@ -38,7 +38,7 @@
                 <p>Keep it friendly.<br>Be courteous and respectful. Appreciate that others may have an opinion
                     different from yours.<br>Share your knowledge.<br>Refrain from demeaning, discriminatory, or
                     harassing behaviour and speech.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
         </div>
     </div>
